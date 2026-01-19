@@ -2,6 +2,8 @@ const { app, BrowserWindow, ipcMain } = require('electron')
 
 const path = require('path')
 
+console.log(app.getVersion())
+
 function createWindow() {
     const win = new BrowserWindow({
         width: 800,
@@ -10,8 +12,6 @@ function createWindow() {
             preload: path.join(__dirname, 'preload.js')
         }
     })
-
-    console.log('load index.html')
     win.loadFile('index.html')
 }
 
