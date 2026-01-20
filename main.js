@@ -21,8 +21,10 @@ function createWindow() {
 }
 
 app.whenReady().then(() => {
-    ipcMain.handle('ping', async () => 'pong')
     createWindow()
+
+    ipcMain.handle('ping', async () => 'pong')
+    ipcMain.handle('get-app-version', async () => app.getVersion())
 
     app.on('activate', () => {
         if (BrowserWindow.getAllWindows().length === 0) {
