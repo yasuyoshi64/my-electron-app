@@ -2,6 +2,11 @@
 const { updateElectronApp } = require('update-electron-app');
 updateElectronApp();
 
+// インストール時のショートカットなどの作成
+if (require('electron-squirrel-startup')) {
+  app.quit();
+}
+
 //
 const { app, BrowserWindow, ipcMain } = require('electron')
 
