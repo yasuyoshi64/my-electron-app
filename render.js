@@ -6,8 +6,9 @@ const func = async () => {
     const information2 = document.getElementById('info2')
     information2.innerText = response
 
-    const information3 = document.getElementById('info3')
-    information3.innerText = 'バージョン: 1.0.1'
+    window.versions.getVersion().then(version => {
+        document.getElementById('version').innerText = `${version}`
+    })
 }
 
 func()
