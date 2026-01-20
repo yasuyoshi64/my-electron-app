@@ -1,3 +1,6 @@
+//
+const { app, BrowserWindow, ipcMain } = require('electron')
+
 // 自動アップデート
 const { updateElectronApp } = require('update-electron-app');
 updateElectronApp();
@@ -6,9 +9,6 @@ updateElectronApp();
 if (require('electron-squirrel-startup')) {
   app.quit();
 }
-
-//
-const { app, BrowserWindow, ipcMain } = require('electron')
 
 const path = require('path')
 
